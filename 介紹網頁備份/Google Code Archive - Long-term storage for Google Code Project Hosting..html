@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://code.google.com/archive/p/win-ldd/downloads -->
+<html class="google ng-scope" lang="en" ng-app="codesiteArchive.application"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+
+    <!-- https://developers.google.com/webmasters/ajax-crawling/docs/specification -->
+    <meta name="fragment" content="!">
+    <title>Google Code Archive - Long-term storage for Google Code Project Hosting.</title>
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://code.google.com/archive/img/project-hosting.ico">
+    <script src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/google.js.下載"></script>
+    <link href="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/maia.css" rel="stylesheet">
+    <link href="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/archive_css.css">
+    <script>
+      CLOSURE_NO_DEPS = true;
+    </script>
+    <script src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/angular.js.下載"></script><style type="text/css">@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-shim {
+  visibility:hidden;
+}
+
+.ng-anchor {
+  position:absolute;
+}
+</style>
+    <script src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/pagedown.js.下載"></script>
+    <script src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/archive.js.下載"></script>
+    <!--<base href="/archive/">--><base href=".">
+  </head>
+
+  <body>
+    <div class="maia-header" id="maia-header" role="banner">
+      <div class="maia-aux">
+        <a href="https://code.google.com/archive/">
+          </a><h1><a href="https://code.google.com/archive/">
+            <img alt="Google" src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/googlelogo_color_116x41dp.png"> Code</a>
+          </h1>
+        
+        <a href="https://code.google.com/archive/">
+          <h2>Archive</h2>
+        </a>
+        <a class="maia-teleport" href="https://code.google.com/archive/#content">Skip to content</a>
+        <div class="maia-util">
+          <form action="https://code.google.com/archive/search" class="maia-search ng-pristine ng-valid">
+            <input name="q" placeholder="Search this site" type="text">
+            <button class="maia-button">
+              <span class="maia-search-icon">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngView: --><div ng-view="" class="ng-scope"><div ng-controller="ProjectHomepageCtrl as projectCtrl" class="ng-scope">
+<nav-bar-widget nav-level-1="projectCtrl.navLevel1" class="ng-isolate-scope"><div class="maia-nav maia-complex" id="maia-nav-x" role="navigation">
+  <div class="maia-aux">
+    <ul>
+      <li ng-class="{active: navLevel1 == &#39;projects&#39;}" class="active">
+        <a href="https://code.google.com/archive/">Projects</a>
+        <!-- ngIf: navLevel2 -->
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;search&#39;}">
+        <a href="https://code.google.com/archive/search">Search</a>
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;about&#39;}">
+        <a href="https://code.google.com/archive/about">About</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav-bar-widget>
+<div id="maia-main" role="main">
+
+  <!-- Left-side resource nav -->
+  <span ng-hide="projectCtrl.project.notFound">
+    <project-resources-widget domain="projectCtrl.domain" project="projectCtrl.projectName" class="ng-isolate-scope"><div class="maia-nav" id="maia-nav-y" role="navigation">
+  <!-- ngIf: domain == 'code.google.com' --><ul ng-if="domain == &#39;code.google.com&#39;" class="ng-scope">
+    <li class="active">
+      <a href="https://code.google.com/archive/p/win-ldd/">Project</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/win-ldd/source">Source</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/win-ldd/issues">Issues</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/win-ldd/wikis">Wikis</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/win-ldd/downloads">Downloads</a>
+    </li>
+  </ul><!-- end ngIf: domain == 'code.google.com' -->
+
+    <!-- ngIf: domain != 'code.google.com' -->
+</div></project-resources-widget>
+  </span>
+
+  <div class="maia-article" role="article">
+    <div class="maia-teleport" id="content"></div>
+    <div class="maia-cols">
+
+      <!-- BUG: We show "no issues" and relaged sub-pages for projects that
+           do not exist. Similarly, if you go to page 1,000,000 it says the
+           project has no issues, despite page 999,999 existing. -->
+      <!-- ngIf: projectCtrl.project.notFound -->
+
+      <div ng-hide="projectCtrl.project.notFound" id="gca-project-header" class="maia-col-10">
+        <img class="gca-project-logo" src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/logo.png">
+        <h1 class="ng-binding">win-ldd</h1>
+      </div>
+
+      <div ng-hide="projectCtrl.project.notFound" class="maia-col-10">
+        <hr>
+
+        <!-- ngIf: projectCtrl.error -->
+
+        <!-- Switch by project resource -->
+        <!-- ngIf: !projectCtrl.error --><div ng-if="!projectCtrl.error" ng-switch="projectCtrl.resource" class="ng-scope">
+
+          <!-- Project -->
+          <!-- ngSwitchWhen: project -->
+
+          <!-- Source -->
+          <!-- ngSwitchWhen: source -->
+
+          <!-- Issues -->
+          <!-- ngSwitchWhen: issues -->
+
+          <!-- Wikis -->
+          <!-- ngSwitchWhen: wikis -->
+
+          <!-- Downloads -->
+          <!-- ngSwitchWhen: downloads --><div ng-switch-when="downloads" class="ng-scope">
+            <!-- ngIf: projectCtrl.downloads == null -->
+
+            <!-- ngIf: projectCtrl.downloads.notFound -->
+
+            <!-- ngIf: projectCtrl.downloads.found --><div ng-if="projectCtrl.downloads.found" class="ng-scope">
+              <!-- ngIf: projectCtrl.downloads.totalPages > 1 -->
+
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="col">File</th>
+                    <th scope="col">Summary + Labels</th>
+                    <th scope="col" width="15%">Uploaded</th>
+                    <th scope="col" width="10%">Size</th>
+                  </tr>
+                  <!-- ngRepeat: download in projectCtrl.downloads.downloads | orderBy: '-uploadDate' --><tr ng-repeat="download in projectCtrl.downloads.downloads | orderBy: &#39;-uploadDate&#39;" class="ng-scope">
+                    <td>
+                      <a href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/win-ldd/win-ldd_Win64_MSVC2010.zip" class="ng-binding">
+                        win-ldd_Win64_MSVC2010.zip
+                      </a>
+                    </td>
+                    <td class="ng-binding">win-ldd win64
+                      <!-- ngRepeat: label in download.labels --><span ng-repeat="label in download.labels" class="ng-scope">
+                        &nbsp;<span class="gca-label ng-binding">Type-Executable</span>
+                      </span><!-- end ngRepeat: label in download.labels --><span ng-repeat="label in download.labels" class="ng-scope">
+                        &nbsp;<span class="gca-label ng-binding">OpSys-Windows</span>
+                      </span><!-- end ngRepeat: label in download.labels -->
+                    </td>
+                    <!-- The upload date is in ms, convert to seconds. -->
+                    <td class="ng-binding">Jan 2, 2012</td>
+                    <td class="ng-binding">9.79KB</td>
+                  </tr><!-- end ngRepeat: download in projectCtrl.downloads.downloads | orderBy: '-uploadDate' --><tr ng-repeat="download in projectCtrl.downloads.downloads | orderBy: &#39;-uploadDate&#39;" class="ng-scope">
+                    <td>
+                      <a href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/win-ldd/win-ldd_Win32_MSVC2010.zip" class="ng-binding">
+                        win-ldd_Win32_MSVC2010.zip
+                      </a>
+                    </td>
+                    <td class="ng-binding">win-ldd win32
+                      <!-- ngRepeat: label in download.labels --><span ng-repeat="label in download.labels" class="ng-scope">
+                        &nbsp;<span class="gca-label ng-binding">Type-Executable</span>
+                      </span><!-- end ngRepeat: label in download.labels --><span ng-repeat="label in download.labels" class="ng-scope">
+                        &nbsp;<span class="gca-label ng-binding">OpSys-Windows</span>
+                      </span><!-- end ngRepeat: label in download.labels -->
+                    </td>
+                    <!-- The upload date is in ms, convert to seconds. -->
+                    <td class="ng-binding">Jan 2, 2012</td>
+                    <td class="ng-binding">8.54KB</td>
+                  </tr><!-- end ngRepeat: download in projectCtrl.downloads.downloads | orderBy: '-uploadDate' -->
+                </tbody>
+              </table>
+            </div><!-- end ngIf: projectCtrl.downloads.found -->
+          </div><!-- end ngSwitchWhen: -->
+
+          <!-- Default -->
+          <!-- ngSwitchDefault: -->
+
+        <!-- end Switch -->
+        </div><!-- end ngIf: !projectCtrl.error -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+    <noscript>
+      <p>The Google Code Archive requires JavaScript to be enabled in your browser.</p>
+    </noscript>
+
+    <div id="maia-signature"></div>
+    <div class="maia-footer" id="maia-footer">
+      <div id="maia-footer-local">
+      </div>
+      <div id="maia-footer-global">
+        <div class="maia-aux">
+          <ul>
+            <li>
+              <a href="https://www.google.com/">Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/about/">About Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./Google Code Archive - Long-term storage for Google Code Project Hosting._files/maia.js.下載"></script>
+  
+
+
+</body></html>
